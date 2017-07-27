@@ -345,6 +345,8 @@ namespace Bearlog.Web.Services
 
                 cmd.ExecuteNonQuery();
 
+                LogService.WriteInfoMessage(string.Format("Created book \"{0}\", {1} ({2})",  model.Name, model.AuthorName, model.Id));
+
                 return true;
             }
 

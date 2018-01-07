@@ -13,37 +13,41 @@
     <!-- SweetAlert -->
     <script src="~/Content/SweetAlert/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="~/Content/SweetAlert/sweetalert2.min.css">
-
     <title>@ViewBag.Title</title>
 </head>
 
 <body>
-  
+    <div id="content"></div>
 
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="../Home/Index">Bearlog</a>          
-        </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../Home/Index">Bearlog</a>          
+            </div>
 
         
 
-        @if (User.Identity.IsAuthenticated)
-        {
-            <div class="navbar-form navbar-right">
-                <div class="form-group">
-                    Добро пожаловать, @(((BearlogPrincipal)User).UserName)!
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="navbar-form navbar-right">
+                    <div class="form-group">
+                        Добро пожаловать, @(((BearlogPrincipal)User).UserName)!
+                    </div>
+                    <div class="btn btn-danger">@Html.RouteLink("Выход", new { action = "Logout", controller = "Account" })</div>
                 </div>
-                <div class="btn btn-danger">@Html.RouteLink("Выход", new { action = "Logout", controller = "Account" })</div>
-            </div>
-        }
-        else
-        {
-            @Html.Partial("_LoginPanel", new LoginModel())
-        }
-    </div>
-</nav>  
+            }
+            else
+            {
+                @Html.Partial("_LoginPanel", new LoginModel())
+            }
+        </div>
+    </nav>  
 
-@RenderBody()
+    @RenderBody()
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+    <script src=@Url.Content("~/Scripts/test.jsx")></script>
 </body>
 </html>

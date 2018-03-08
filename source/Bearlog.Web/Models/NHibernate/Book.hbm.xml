@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="Bearlog" namespace="Bearlog">
+  <class name="Book" dynamic-update="true" >
+    <cache usage="read-write"/>
+
+    <!-- Any object properties -->
+
+    <id name="Id" type="Guid">
+      <generator class="Guid" />
+    </id>
+
+    <!-- Translation properties -->
+
+    <property name="Tags" type="String[]"/>
+    <property name="CreatorId" type="Guid"/>
+    <property name="Name" type="String"/>
+    <property name="OriginalName" type="String"/>
+    <property name="FromLanguageId" type="Guid"/>
+    <property name="ToLanguageId" type="Guid"/>
+    <property name="CoverLink" type=""/>
+    <property name="IsPrivate" type=""/>
+    <property name="IsFinished" type=""/>
+
+    <!-- Book properties-->
+
+    <property name="AuthorName" type=""/>
+    <property name="AuthorOriginalName" type=""/>
+    <property name="Year" type="Int"/>
+    <many-to-one name="Parts" cascade="delete"/>
+  </class>
+</hibernate-mapping>

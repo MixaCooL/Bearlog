@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="Bearlog" namespace="Bearlog">
+  <class name="User" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="Id" type="Guid">
+      <generator class="Guid" />
+    </id>
+    <property name="UserName" type="String"/>
+    <property name="Email" type="String"/>
+    <property name="Roles" type="String[]"/>
+    <property name="PasswordHash" type="String"/>
+    <property name="IsBanned" type="Bool"/>
+    <property name="IsActive" type="Bool"/>
+  </class>
+</hibernate-mapping>

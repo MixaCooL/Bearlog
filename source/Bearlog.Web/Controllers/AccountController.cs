@@ -63,7 +63,7 @@ namespace Bearlog.Web.Controllers
             {
                 if (_dbService.ValidateUser(model.UserName, model.Password))
                 {
-                    User user = _dbService.GetUser(model.UserName);
+                    UserModel user = _dbService.GetUser(model.UserName);
                     if (user == null) throw new NullReferenceException("Membership.GetUser");
 
                     BearlogPrincipalSerializeModel serializeModel = new BearlogPrincipalSerializeModel();

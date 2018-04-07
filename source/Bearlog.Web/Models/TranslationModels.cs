@@ -26,26 +26,19 @@ namespace Bearlog.Web.Models
 
     public class BookModel : TranslationModel
     {
-        public string AuthorName { get; set; }
-        public string AuthorOriginalName { get; set; }
-        //public string FromLanguage { get; set; }
-        //public string ToLanguage { get; set; }
         public int Year { get; set; }
         public List<Part> Parts { get; set; }
     }
 
-   
-    
-    public class Part
+    public class PartModel
     {
         public Guid Id { get; set; }
-        public List<Fragment> Fragments { get; set; } // хранится как нумерованный список О_о
+        public List<Fragment> Fragments { get; set; }
         public string Name;
         public string OriginalName { get; set; }
-
     }
 
-    public class Fragment
+    public class FragmentModel
     {
         public Guid Id { get; set; }
         public string OriginalText;
@@ -60,11 +53,11 @@ namespace Bearlog.Web.Models
         public int Rating { get; set; }
         public DateTime UpdatedAt { get; set; }
         public DateTime CreateAt { get; set; }
-        public List<Comments> Comments { get; set; }
+        public List<Comment> Comments { get; set; }
 
     }
 
-    public class Comments
+    public class Comment
     {
         
     }

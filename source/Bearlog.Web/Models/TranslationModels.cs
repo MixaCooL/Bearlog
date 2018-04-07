@@ -28,14 +28,12 @@ namespace Bearlog.Web.Models
     {
         public string AuthorName { get; set; }
         public string AuthorOriginalName { get; set; }
-        //public string FromLanguage { get; set; }
-        //public string ToLanguage { get; set; }
+//        public string FromLanguage { get; set; }
+//        public string ToLanguage { get; set; }
         public int Year { get; set; }
         public List<Part> Parts { get; set; }
     }
 
-   
-    
     public class Part
     {
         public Guid Id { get; set; }
